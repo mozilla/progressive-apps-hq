@@ -30,7 +30,7 @@ header .wrapper {
 }
 
 header .titles {
-  background-image: url('../icons/progressive.svg');
+  background-image: url('../icons/progressive-hq.svg');
   background-repeat: no-repeat;
   background-position: left center;
   background-size: 120px;
@@ -50,7 +50,6 @@ header h1 {
 header h2 {
   color: #d1d2d3;
   font-size: 1.7rem;
-  text-align: right;
 }
 
 header strong {
@@ -79,8 +78,8 @@ input {
   padding: 0.5rem 0.5rem 0.5rem 2rem;
   border: 0;
   border-radius: 3px;
-  max-width: 1020px;
-  width: 80ex;
+  max-width: 900px;
+  width: 70ex;
   font-size: 1.1rem;
   background-image: url('../icons/search.svg');
   background-repeat: no-repeat;
