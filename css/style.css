@@ -8,6 +8,11 @@ html, body {
   height: 100%;
 }
 
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
 body {
   font-family: 'Fira Sans', Helvetica, Arial, sans-serif;
   font-size: 1rem;
@@ -94,23 +99,28 @@ input {
   padding: 0 1rem;
 }
 
-.main {
+.content {
   flex-grow: 1;
 }
 
-.main h2 {
+.content h2 {
   color: #4d4e53;
   font-size: 2rem;
   font-weight: 300;
   border-bottom: 1px solid #bbb;
 }
 
-.main p {
+.feature .content h2:first-child {
+  font-weight: normal;
+  border: none;
+}
+
+.content p {
   font-size: 1.25rem;
   font-weight: 400;
 }
 
-.main ul {
+.content ul {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -118,7 +128,7 @@ input {
   justify-content: center;
 }
 
-.main ul li {
+.content ul li {
   display: flex;
   flex-direction: column;
   min-height: 5rem;
@@ -128,22 +138,22 @@ input {
   transition: background-color 100ms linear;
 }
 
-.main ul li:hover {
+.content ul li:hover {
   background-color: #f8f8f8;
   transition: background-color 200ms linear;
 }
 
-.main ul li a {
+.content ul li a {
   color: inherit;
   text-decoration: inherit;
 }
 
-.main ul li:hover h3 {
+.content ul li:hover h3 {
   color: #0095dd;
   transition: color 200ms linear;
 }
 
-.main ul li p {
+.content ul li p {
   font-size: 1rem;
   font-weight: 300;
   font-style: italic;
