@@ -181,6 +181,7 @@ footer a:hover {
 }
 
 .grid {
+  padding: 0;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
