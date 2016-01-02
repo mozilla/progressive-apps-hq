@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+
+    {% include header.html %}
+
+    <section class="content">
+      <div class="wrapper">
+        <h2>{{ page.title }}</h2>
+        {{ content }}
+        <h2>Technologies</h2>
+        <ul class="grid">
+          {% for technology in page.technologies %}
+            <li>
+              <a href="../technologies/service-workers.html">
+                <h3 id="Service Workers">Service Workers</h3>
+                <p>Cache network resources and enable <strong>super fast</strong> access to them.</p>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </section>
+
+    {% include footer.html %}
+
+  </body>
+
+</html>

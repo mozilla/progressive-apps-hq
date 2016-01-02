@@ -1,0 +1,22 @@
+<header class="blueprint">
+  <div class="wrapper">
+    <section class="titles">
+      <a href="{{ "/" | prepend: site.baseurl }}">
+        <h1>Progressive Web Apps <strong>HQ</strong></h1>
+        <h2>The <strong>Web</strong> is the platform</h2>
+      </a>
+    </section>
+    <nav>
+      <ul>
+        {% for page in site.html_pages %}
+          {% if page.title  %}
+            <li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
+          {% endif %}
+        {% endfor  %}
+      </ul>
+    </nav>
+  </div>
+  <form>
+    <input type="search" placeholder="Search HQ" />
+  </form>
+</header>
