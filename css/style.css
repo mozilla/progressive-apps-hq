@@ -155,28 +155,72 @@ footer a:hover {
   text-decoration: underline;
 }
 
-.resources {
-  list-style: url('../tool.svg');
+.quick-links {
+  padding: 0;
+  margin: 0;
+}
+
+.quick-links li {
+  font-size: 1rem;
+  background: none;
+  padding: 0 0.5rem;
+  padding-left: 2rem;
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: 1.5rem;
+}
+
+.quick-links li.status {
+  background-image: url('../icons/status.svg');
+}
+
+.quick-links li.spec {
+  background-image: url('../icons/spec.svg');
+  background-size: 1rem;
+  background-position: 0.25rem center;
+}
+
+.resources li h3 {
+  background-size: 1rem 1rem;
+  background-position: left center;
+  background-repeat: no-repeat;
+  padding-left: 1.7rem;
+}
+
+.resources li.doc h3 {
+  background-image: url('../icons/doc.svg');
+}
+
+.resources li.tool h3 {
+  background-image: url('../icons/tool.svg');
+}
+
+.resources li.demo h3 {
+  background-image: url('../icons/demo.svg');
 }
 
 .faq,
+.resources,
 .use-cases {
   padding: 0;
   font-style: italic;
 }
 
 .faq li,
+.resources li,
 .use-cases li {
   background-color: #f8f8f8;
   padding: 0.5rem;
   border-radius: 5px;
 }
 
-.faq h3 {
+.faq h3,
+.resources h3 {
   margin: 0;
 }
 
-.faq p {
+.faq p,
+.resources p {
   margin: 0.2rem 0 0.5rem 0;
 }
 

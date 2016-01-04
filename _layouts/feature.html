@@ -18,6 +18,7 @@
           {% endfor %}
         </ul>
         <h2>Technologies</h2>
+        {% if page.technologies %}
         <ul class="grid">
           {% for technology in site.technologies %}
             {% if page.technologies contains technology.slug %}
@@ -30,6 +31,10 @@
             {% endif %}
           {% endfor %}
         </ul>
+        {% else %}
+          <p>No new technnologies needed. The Web is already <strong>working this way</strong>!</p>
+        {% endif %}
+        {% include resources.html %}
       </div>
     </section>
 
