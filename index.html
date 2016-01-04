@@ -18,34 +18,12 @@ layout: default
 <h2>Technologies</h2>
 <p>Progressive Web Applications use the correct set of <strong>technologies</strong> to leverage UX in the Web&hellip;</p>
 <ul class="grid">
+  {% for technology in site.technologies  %}
   <li>
-    <a href="technologies/service-workers.html">
-      <h3 id="Service Workers">Service Workers</h3>
-      <p>Cache network resources and enable <strong>super fast</strong> access to them.</p>
+    <a href="{{ technology.url | prepend: site.baseurl }}">
+      <h3 id="{{ technology.title }}">{{ technology.title }}</h3>
+      <p>{{ technology.description }}</p>
     </a>
   </li>
-  <li>
-    <h3 id="Web Application Manifest">Web Application Manifest</h3>
-    <p>Distribute your applications through the ultimate platform: the Web.</p>
-  </li>
-  <li>
-    <h3 id="Push API">Push API</h3>
-    <p>Stand your application out and draw the user attention.</p>
-  </li>
-  <li>
-    <h3 id="Add to homescreen">Add to homescreen</h3>
-    <p>Allow the web application to become a first-class citizen in your device.</p>
-  </li>
-  <li>
-    <h3 id="Background Sync">Background Sync</h3>
-    <p>Perform tasks on regaining connection.</p>
-  </li>
-  <li>
-    <h3 id="App Shell">App Shell</h3>
-    <p>Use app shell architecture to reach almost instant first draw.</p>
-  </li>
-  <li>
-    <h3 id="Media Query">Media Query</h3>
-    <p>Adapt your design to bring the best user experience.</p>
-  </li>
+  {% endfor %}
 </ul>

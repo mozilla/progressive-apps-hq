@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+
+    {% include header.html %}
+
+    <section class="content">
+      <div class="wrapper">
+        <h2>{{ page.title }}</h2>
+        {{ content }}
+        <ul class="status-doc">
+          <li class="status">{{ page.title }} implementation <a href="{{ page.status }}" target="_blank">status</a>.</li>
+          <li class="doc">Look at the <a href="{{ page.spec }}" target="_blank">official specification</a>.</li>
+        </ul>
+        <h2>Resources</h2>
+        <ul class="resources">
+          {% for resource in page.resources %}
+          <li class="{{ resource.type }}">{{ resource.description }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </section>
+
+    {% include footer.html %}
+
+  </body>
+
+</html>

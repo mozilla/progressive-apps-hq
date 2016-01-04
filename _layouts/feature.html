@@ -3,7 +3,7 @@
 
   {% include head.html %}
 
-  <body>
+  <body class="{{ page.layout }}">
 
     {% include header.html %}
 
@@ -11,15 +11,23 @@
       <div class="wrapper">
         <h2>{{ page.title }}</h2>
         {{ content }}
+        <h2>Use cases</h2>
+        <ul class="use-cases">
+          {% for usecase in page.usecases %}
+            <li>{{ usecase }}</li>
+          {% endfor %}
+        </ul>
         <h2>Technologies</h2>
         <ul class="grid">
-          {% for technology in page.technologies %}
-            <li>
-              <a href="../technologies/service-workers.html">
-                <h3 id="Service Workers">Service Workers</h3>
-                <p>Cache network resources and enable <strong>super fast</strong> access to them.</p>
-              </a>
-            </li>
+          {% for technology in site.technologies %}
+            {% if page.technologies contains technology.slug %}
+              <li>
+                <a id="{{ technology.id }}" href="{{ technology.url | prepend: site.baseurl }}">
+                  <h3 id="{{ technology.title }}">{{ technology.title }}</h3>
+                  <p>{{ technology.description }}</p>
+                </a>
+              </li>
+            {% endif %}
           {% endfor %}
         </ul>
       </div>

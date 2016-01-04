@@ -16,12 +16,20 @@ collections:
   features:
     output: true
     permalink: /features/:path/
+  technologies:
+    output: true
+    permalink: /technologies/:path/
 defaults:
   - scope:
       path: ""
       type: features
     values:
       layout: feature
+  - scope:
+      path: ""
+      type: technologies
+    values:
+      layout: technology
 twitter_username: mozilla
 github_username:  mozilla
 
