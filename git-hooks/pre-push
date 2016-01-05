@@ -18,7 +18,7 @@ do
     rm -rf *
 
     echo "Adding generated Jekyll content..."
-    mv "$temp_dest/*" "."
+    mv "$temp_dest/"/* "."
     git add --all :./
     git commit -m\""$build_msg"\"
 
