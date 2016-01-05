@@ -1,0 +1,32 @@
+#!/bin/sh
+
+remote="$1"
+url="$2"
+
+while read local_ref local_sha remote_ref remote_sha
+do
+    temp_dest=`mktemp -d`
+    build_msg="Building Jekyll site for $local_sha"
+
+    echo "$build_msg on $temp_dest"
+    bundle exec jekyll build -d "$temp_dest"
+
+    echo "Preparing to push to gh-pages"
+    git checkout gh-pages
+
+    echo "Empty current working tree..."
+    rm -rf *
+
+    echo "Adding generated Jekyll content..."
+    mv "$temp_dest/*" "."
+    git add --all :./
+    git commit -m\""$build_msg"\"
+
+    echo "Pushing to gh-pages..."
+    git push --no-verify "$remote" "gh-pages"
+
+    git checkout -
+    git checkout .
+done
+
+exit 0
