@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Copy this hook to the .git/hooks directory to build
+# the Jekyll site and publish it to gh-pages when
+# attempting to push to master.
+
 remote="$1"
 url="$2"
 
@@ -15,10 +19,10 @@ do
     git checkout gh-pages
 
     echo "Empty current working tree..."
-    rm -rf *
+    find . -not -wholename "*.git*" -delete
 
     echo "Adding generated Jekyll content..."
-    mv "$temp_dest/"/* "."
+    rsync -a "$temp_dest"/ .
     git add --all :./
     git commit -m\""$build_msg"\"
 
