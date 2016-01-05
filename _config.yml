@@ -32,7 +32,11 @@ defaults:
       layout: technology
 twitter_username: mozilla
 github_username:  mozilla
-exclude: ['.nojekyll', 'Gemfile', 'Gemfile.lock']
+exclude: 
+- '.nojekyll'
+- 'Gemfile'
+- 'Gemfile.lock'
+- 'git-hooks'
 
 # Build settings
 markdown: kramdown
