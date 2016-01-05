@@ -13,7 +13,7 @@ do
     build_msg="Building Jekyll site for $local_sha"
 
     echo "$build_msg on $temp_dest"
-    bundle exec jekyll build -d "$temp_dest"
+    jekyll build -d "$temp_dest"
 
     echo "Preparing to push to gh-pages"
     git checkout gh-pages
