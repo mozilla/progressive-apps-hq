@@ -37,13 +37,13 @@
 
     // This is the unique name for the cache controlled by this version of the worker.
     get CACHE_NAME() {
-      return this.CACHE_PREFIX + '6f33a5e8066a43b66ec856fa59a17448ed25424d';
+      return this.CACHE_PREFIX + '3fc7e6995aa48f0624ca9abf7f9a5f4ebf366a43';
     },
 
     // This is a list of resources that will be cached.
     RESOURCES: [
       './', // cache always the current root to make the default page available
-      './about.html', // 00d2c791a2481b8b0998ecb1f02ec245afda83c7
+      './about.html', // 2b4ab48ec1801b2364608b7ca8926e5175228f6c
       './android-icon-144x144.png', // ac5f36b82a2d82127d03495fbff70a6016ac6b97
       './android-icon-192x192.png', // 4ceef14cf553858e1cefe454539e33f8e9afb77d
       './android-icon-36x36.png', // f2e34b02d00aa35676403a57e6efcafa6bd530ee
@@ -67,7 +67,7 @@
       './favicon-96x96.png', // 1a7295095eff897954726e7751ce46f737cb2416
       './favicon.ico', // e07b43f940184138d77857cdbdbe0a592bd573a8
       './favicon.png', // 2fe87b3f9d05988c8d35c195f1cb57debc3a5020
-      './index.html', // 36404c0bbd0baadac6dd548b00b5b18980d9668a
+      './index.html', // ca08973f5c30b11589ea3786b55ccb3ea67ddcfe
       './manifest.json', // d083563961744515554fba97dfa8138f2f6d8ad5
       './ms-icon-144x144.png', // ac5f36b82a2d82127d03495fbff70a6016ac6b97
       './ms-icon-150x150.png', // 02d66ca7d6531c79bbbd02182cc25e8483f08859
