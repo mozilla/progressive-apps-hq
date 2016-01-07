@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Copy this hook to the .git/hooks directory to build
+# the Jekyll site and publish it to gh-pages when
+# attempting to push to master.
+
+commit_msg="$1"
+temp_dest=`mktemp -d`
+
+echo "Building Jekyll site on $temp_dest"
+jekyll build -d "$temp_dest"
+
+echo "Preparing to push to gh-pages"
+git stash
+git checkout gh-pages
+
+echo "Empty current working tree..."
+find . -not -wholename "*.git*" -delete
+
+echo "Adding generated Jekyll content..."
+rsync -a "$temp_dest"/ .
+git add --all :./
+git commit -m"$commit_msg"
+
+git checkout -
+git stash pop
+
+exit 0
