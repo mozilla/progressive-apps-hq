@@ -5,7 +5,6 @@
 # attempting to push to master.
 
 remote="$1"
-url="$2"
 
 while read local_ref local_sha remote_ref remote_sha
 do
