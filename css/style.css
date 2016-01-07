@@ -33,6 +33,12 @@ header .wrapper {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  padding: 1em;
+}
+
+p, li {
+  line-height: 1.4em;
+  margin: 0.5em 0;
 }
 
 .titles {
@@ -48,6 +54,7 @@ header .wrapper {
 .titles h2 {
   font-weight: 300;
   margin: 0;
+  line-height: 1.4em;
 }
 
 .titles h1 {
@@ -104,6 +111,7 @@ input {
 .content {
   flex-grow: 1;
   font-size: 1.25rem;
+  margin: 2em auto;
 }
 
 .content h2 {
@@ -111,6 +119,7 @@ input {
   font-size: 2rem;
   font-weight: 300;
   border-bottom: 1px solid #bbb;
+  padding-bottom: 0.25em;
 }
 
 .technology .content h2:first-child,
@@ -132,27 +141,33 @@ input {
   margin-bottom: 1rem;
 }
 
-footer {
+.main-footer {
   border-top: 1px solid #d1d2d3;
   justify-content: center;
 }
 
-footer .wrapper {
+.main-footer .wrapper {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  padding: 2em 1em;
 }
 
-footer ul {
+.main-footer ul {
   list-style: none;
+  margin: 0;
 }
 
-footer a {
+.main-footer a {
   text-decoration: none;
 }
 
-footer a:hover {
+.main-footer a:hover {
   text-decoration: underline;
+}
+
+.main-footer p, li {
+  margin: 0;
 }
 
 .quick-links {
@@ -203,14 +218,13 @@ footer a:hover {
 .resources,
 .use-cases {
   padding: 0;
-  font-style: italic;
 }
 
 .faq li,
 .resources li,
 .use-cases li {
   background-color: #f8f8f8;
-  padding: 0.5rem;
+  padding: 1em;
   border-radius: 5px;
 }
 
@@ -219,9 +233,10 @@ footer a:hover {
   margin: 0;
 }
 
-.faq p,
-.resources p {
-  margin: 0.2rem 0 0.5rem 0;
+.faq p:last-child,
+.resources p:last-child {
+  /*margin: 0.2rem 0 0.5rem 0;*/
+  margin-bottom: 0;
 }
 
 .grid {
