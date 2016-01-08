@@ -20,7 +20,7 @@ find . -not -wholename "*.git*" -delete
 echo "Adding generated Jekyll content..."
 rsync -a "$temp_dest"/ .
 git add --all :./
-git commit -m"$commit_msg"
+git commit -m "$commit_msg"
 
 git checkout -
 
