@@ -6,7 +6,29 @@ Progressive Web Apps HQ summarizes the set of features that Progressive Web Apps
 This is not a discussion site, nor a proposal hub but a meeting point for those developing Progressive Web Applications with up-to-date and accurate information reflecting the state of the art.
 
 ## How to contribute?
-Progressive Web Apps is a collaborative Jekyll web site using [collections](http://jekyllrb.com/docs/collections/). You can contribute by adding new items to collections or modifying existing information. In any case, simply send a pull request.
+Progressive Web Apps is a collaborative **Jekyll 3** web site using [collections](http://jekyllrb.com/docs/collections/). You can contribute by adding new items to collections or modifying existing information. In any case, simply send a pull request.
+
+### Building the site
+You want to contribute and you want the HQ running on localhost. You will need [Jekyll 3](http://jekyllrb.com/docs/installation/#install-with-rubygems) which needs [Ruby v2.x](https://www.ruby-lang.org/) to work.
+
+The safest and most compatible way to install Ruby is by using [rbenv](https://github.com/rbenv/rbenv#installation). Visit the link to find the proper way to install it according to your operating system.
+```
+# list all installable versions
+$ rbenv install -l
+
+# install the last stable version
+$ rbenv install 2.3.0
+```
+
+Now you can install Jekyll 3 as a gem:
+```
+$ gem install jekyll
+```
+
+And run:
+```
+$ jekyll serve
+```
 
 ### Resources
 The easiest way of contributing is by adding a resource. If your resource is about one feature, add a resource entry to the feature document inside the `_features` folder. If it is related with a technology, do the same with the proper entry inside `_technologies` folder. The format of a resource entry is as follows:
@@ -40,4 +62,4 @@ The metadata for technologies includes:
   * `resources`: list of [resources](#resources) related with the feature.
   
 ## Is the HQ a Progressive App?
-Nope&hellip; yet.
+Currently, Progressive Web Apps HQ is using [jekyll-offline](https://github.com/mozilla/jekyll-offline) plug-in to add offline support but we are working on other aspects of progressive web applications. Which aspects? [Visit the HQ](http://mozilla.github.io/progressive-apps-hq/)!
