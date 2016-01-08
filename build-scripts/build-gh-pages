@@ -11,7 +11,7 @@ temp_dest=`mktemp -d`
 echo "Building Jekyll site on $temp_dest"
 jekyll build -d "$temp_dest" >/dev/null 2>&1
 
-echo "Preparing to push to gh-pages"
+echo "Changing to gh-pages"
 git checkout gh-pages
 
 echo "Empty current working tree..."
@@ -21,7 +21,5 @@ echo "Adding generated Jekyll content..."
 rsync -a "$temp_dest"/ .
 git add --all :./
 git commit -m "$commit_msg"
-
-git checkout -
 
 exit 0
