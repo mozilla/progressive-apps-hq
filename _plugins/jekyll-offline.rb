@@ -7,8 +7,10 @@ Jekyll::Hooks.register :site, :post_write do |site|
   else
     puts <<EOS
 
-ERROR: Can't find oghliner!
+WARNING: Can't find oghliner!
 Install oghliner globally by typing 'npm install -g oghliner'
+
+The process will continue.
 
 EOS
   end
