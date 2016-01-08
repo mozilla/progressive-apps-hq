@@ -37,7 +37,7 @@
 
     // This is the unique name for the cache controlled by this version of the worker.
     get CACHE_NAME() {
-      return this.CACHE_PREFIX + 'efaf209c9059b080ce5d8012ccae0f29daa0363d';
+      return this.CACHE_PREFIX + '0e059128a377a73ced9567a3a96411d4668c40e1';
     },
 
     // This is a list of resources that will be cached.
@@ -100,7 +100,6 @@
       './ms-icon-310x310.png', // 491a3a6e4158cdc5c27df724e03a27fa18e8a991
       './ms-icon-70x70.png', // efdda126eaabaf42a4501a05ce3010fe9042b55f
       './offline-manager.js', // e2e09e000c5b64035940ae44e9c0936eb25ecd51
-      './README.md', // a5b6dd31b515a94daa586a5bad21f3b416acb6af
       './technologies/add-to-homescreen/index.html', // 27e2a3e2947f7407aa69c16dc5a620060198c1b6
       './technologies/app-shell/index.html', // 1a28f89cc729cfb30a70cfca6f42cd06fe3233b8
       './technologies/background-sync/index.html', // 70709ab882824291377f4f2e2f848d2692398c9e
