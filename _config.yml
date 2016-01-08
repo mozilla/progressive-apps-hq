@@ -37,6 +37,7 @@ exclude:
 - 'Gemfile'
 - 'Gemfile.lock'
 - 'git-hooks'
+- 'README.md'
 
 # Build settings
 markdown: kramdown
