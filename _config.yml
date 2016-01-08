@@ -36,7 +36,7 @@ exclude:
 - '.nojekyll'
 - 'Gemfile'
 - 'Gemfile.lock'
-- 'git-hooks'
+- 'build-scripts'
 - 'README.md'
 
 # Build settings

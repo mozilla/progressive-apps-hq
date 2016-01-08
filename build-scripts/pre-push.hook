@@ -10,7 +10,7 @@ remote="$1"
 while read local_ref local_sha remote_ref remote_sha
 do
     build_msg="Building Jekyll site for commit $local_sha"
-    ./git-hooks/build-gh-pages "$build_msg"
+    ./build-scripts/build-gh-pages "$build_msg"
 
     echo "Pushing to gh-pages..."
     git push --no-verify "$remote" "gh-pages"
