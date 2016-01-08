@@ -12,7 +12,7 @@ Progressive Web Apps is a collaborative **Jekyll 3** web site using [collections
 You want to contribute and you want the HQ running on localhost. You will need [Jekyll 3](http://jekyllrb.com/docs/installation/#install-with-rubygems) which needs [Ruby v2.x](https://www.ruby-lang.org/) to work.
 
 The safest and most compatible way to install Ruby is by using [rbenv](https://github.com/rbenv/rbenv#installation). Visit the link to find the proper way to install it according to your operating system.
-```
+```bash
 # list all installable versions
 $ rbenv install -l
 
@@ -21,12 +21,12 @@ $ rbenv install 2.3.0
 ```
 
 Now you can install Jekyll 3 as a gem:
-```
+```bash
 $ gem install jekyll
 ```
 
 And run:
-```
+```bash
 $ jekyll serve
 ```
 
