@@ -34,8 +34,6 @@ twitter_username: mozilla
 github_username:  mozilla
 exclude: 
 - '.nojekyll'
-- 'Gemfile'
-- 'Gemfile.lock'
 - 'build-scripts'
 - 'README.md'
 
