@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 # Copy this hook to the .git/hooks directory to build
 # the Jekyll site and publish it to gh-pages when
@@ -12,11 +13,8 @@ do
     ./git-hooks/build-gh-pages "$build_msg"
 
     echo "Pushing to gh-pages..."
-    git stash
-    git checkout gh-pages
     git push --no-verify "$remote" "gh-pages"
     git checkout -
-    git stash pop
 done
 
 exit 0
