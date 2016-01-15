@@ -37,12 +37,12 @@
 
     // This is the unique name for the cache controlled by this version of the worker.
     get CACHE_NAME() {
-      return this.CACHE_PREFIX + '0e059128a377a73ced9567a3a96411d4668c40e1';
+      return this.CACHE_PREFIX + '5630b7a30e6d8c9950782dfd0946d0fa5c8d7126';
     },
 
     // This is a list of resources that will be cached.
     RESOURCES: [
-      './about.html', // 2e6a33f268f92348529dadff4f75263f6501da5a
+      './about.html', // c2ba8e6fce64ac92cae4187e423730cbccfd4569
       './android-icon-144x144.png', // ac5f36b82a2d82127d03495fbff70a6016ac6b97
       './android-icon-192x192.png', // 4ceef14cf553858e1cefe454539e33f8e9afb77d
       './android-icon-36x36.png', // f2e34b02d00aa35676403a57e6efcafa6bd530ee
@@ -67,15 +67,15 @@
       './favicon-96x96.png', // 1a7295095eff897954726e7751ce46f737cb2416
       './favicon.ico', // e07b43f940184138d77857cdbdbe0a592bd573a8
       './favicon.png', // 2fe87b3f9d05988c8d35c195f1cb57debc3a5020
-      './features/discoverable/index.html', // be6051a8ddc7caef13429eee2af11990b307c52b
-      './features/fresh/index.html', // 8017866c69f3cd0662cb10cf47681ea9d5a0a8ce
-      './features/installable/index.html', // 5bba9e8de63f75445a8a44783a43428a7212bf70
-      './features/linkable/index.html', // ff28721e7241cbceb6ab759c5711a5961aba8fab
-      './features/network-independent/index.html', // 53d27bb710b040ea63640d45f0eb6e7dac12aad2
-      './features/progressive/index.html', // 8c7e8d16fdb2e5c4bfbfee8ea0f0410b1e6c04d8
-      './features/re-engageable/index.html', // 8167fcb48cf6daf5fbf09721daab232ccc4e5a2b
-      './features/responsive/index.html', // fc639abb462d9b31287b9e71cb0fabcd6348139e
-      './features/safe/index.html', // 129c8b3f9ca5312485aa550deef6164ac28308d9
+      './features/discoverable/index.html', // 4700879b812350e4edaaa57e473d33d9a24d2957
+      './features/fresh/index.html', // 72db0a20a0e8e48e76674887abfe50730a9e39bb
+      './features/installable/index.html', // c8bd53fd2f86cdadfb2dc32edebf2438ab6aade9
+      './features/linkable/index.html', // c4912d0af1aa005229b9e1a841e831a234a9e806
+      './features/network-independent/index.html', // c7e1264635f848f9a26f294104e6222f52e1eb3a
+      './features/progressive/index.html', // 9765ce725f198edaedb33c56097fd21e71bf2997
+      './features/re-engageable/index.html', // 6f9e4853c8bcd8ef2c002c627a6f518e17f506f6
+      './features/responsive/index.html', // 6d2adca5b7b096590b30c1583af68bcdd7ce9521
+      './features/safe/index.html', // 13e51ed5f2debefd1b35eb60731dcc339d2a78bd
       './icons/demo.svg', // a1bdd982b02620d826d543975f7f0c50ed5ef7b9
       './icons/discoverable.svg', // 7a97b0a6156516a23744ef2d2422df1472ec9765
       './icons/doc.svg', // 78cf1e74844ade439c94029b63a665bc776c75d0
@@ -93,20 +93,20 @@
       './icons/spec.svg', // 59295e3d8de110fad0e6ffafba092ceee40f19a3
       './icons/status.svg', // 1be7d898774b8f0daeb30573ec2802c077d8d18a
       './icons/tool.svg', // 6d8df314cc039a2c6edebaef409f1d76c2ebd1ae
-      './index.html', // 13d9dc772ae43cf0d3bed4e1c6a38ce3005c8378
+      './index.html', // af3468c88653cb63cd1971ec709aac350bc12a80
       './manifest.json', // d083563961744515554fba97dfa8138f2f6d8ad5
       './ms-icon-144x144.png', // ac5f36b82a2d82127d03495fbff70a6016ac6b97
       './ms-icon-150x150.png', // 02d66ca7d6531c79bbbd02182cc25e8483f08859
       './ms-icon-310x310.png', // 491a3a6e4158cdc5c27df724e03a27fa18e8a991
       './ms-icon-70x70.png', // efdda126eaabaf42a4501a05ce3010fe9042b55f
       './offline-manager.js', // e2e09e000c5b64035940ae44e9c0936eb25ecd51
-      './technologies/add-to-homescreen/index.html', // 27e2a3e2947f7407aa69c16dc5a620060198c1b6
-      './technologies/app-shell/index.html', // 1a28f89cc729cfb30a70cfca6f42cd06fe3233b8
-      './technologies/background-sync/index.html', // 70709ab882824291377f4f2e2f848d2692398c9e
-      './technologies/media-query/index.html', // 1790d840e501c2d408f3654069a6b7eaecd5a637
-      './technologies/push-api/index.html', // 26f90835213e949116b8ffe001404aa565dc9416
-      './technologies/service-workers/index.html', // 2cda5e1a14125a67999c465a59e48c4235d4c2f9
-      './technologies/web-manifest/index.html', // b286ee2d624db90801b8f6f107416553b98c2cd9
+      './technologies/add-to-homescreen/index.html', // 33f86676c9d6faf6d2f21f9db03e79b7f7b05519
+      './technologies/app-shell/index.html', // afda0104f6021938194e5db69891542edf7f392d
+      './technologies/background-sync/index.html', // bbc3705b8d934116424918235a3c4a2d8b6ec4e6
+      './technologies/media-query/index.html', // d573e06593b7a19bd524672ca2a027871f6f526d
+      './technologies/push-api/index.html', // 4ca2ed0c0ff959ce29cb5bf94dc55701aea03fb2
+      './technologies/service-workers/index.html', // 5657aaf7e647148c7677ce10c35118cbf4ae3ec2
+      './technologies/web-manifest/index.html', // 8de27175f88740f99d49f18e25dd56cfdd87d452
 
     ],
 
@@ -170,11 +170,13 @@
 
     // Make requests to directories become requests to index.html
     extendToIndex: function (request) {
-      var url = request.url;
-      if (url[url.length - 1] === '/') {
-        url += 'index.html';
+      var url = new URL(request.url, self.location);
+      var path = url.pathname;
+      if (path[path.length - 1] !== '/') {
+        return request;
       }
-      return new Request(url, request);
+      url.pathname += 'index.html';
+      return new Request(url.toString(), request);
     },
 
     // Prepare the cache for installation, deleting it before if it already exists.
