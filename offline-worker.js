@@ -7,22 +7,24 @@
 
   // On install, cache resources and skip waiting so the worker won't
   // wait for clients to be closed before becoming active.
-  self.addEventListener('install', function (event) {
-    event.waitUntil(oghliner.cacheResources().then(function () {
-      return self.skipWaiting();
-    }));
-  });
+  self.addEventListener('install', event =>
+    event.waitUntil(
+      oghliner.cacheResources()
+      .then(() => self.skipWaiting())
+    )
+  );
 
   // On activation, delete old caches and start controlling the clients
   // without waiting for them to reload.
-  self.addEventListener('activate', function (event) {
-    event.waitUntil(oghliner.clearOtherCaches().then(function () {
-      return self.clients.claim();
-    }));
-  });
+  self.addEventListener('activate', event =>
+    event.waitUntil(
+      oghliner.clearOtherCaches()
+      .then(() => self.clients.claim())
+    )
+  );
 
   // Retrieves the request following oghliner strategy.
-  self.addEventListener('fetch', function (event) {
+  self.addEventListener('fetch', event => {
     if (event.request.method === 'GET') {
       event.respondWith(oghliner.get(event.request));
     } else {
@@ -37,7 +39,7 @@
 
     // This is the unique name for the cache controlled by this version of the worker.
     get CACHE_NAME() {
-      return this.CACHE_PREFIX + '5630b7a30e6d8c9950782dfd0946d0fa5c8d7126';
+      return this.CACHE_PREFIX + '2642c5aba29e1df9696c82187549d63eb5e2df1f';
     },
 
     // This is a list of resources that will be cached.
@@ -67,9 +69,8 @@
       './favicon-96x96.png', // 1a7295095eff897954726e7751ce46f737cb2416
       './favicon.ico', // e07b43f940184138d77857cdbdbe0a592bd573a8
       './favicon.png', // 2fe87b3f9d05988c8d35c195f1cb57debc3a5020
-      './features/discoverable/index.html', // 4700879b812350e4edaaa57e473d33d9a24d2957
-      './features/fresh/index.html', // 72db0a20a0e8e48e76674887abfe50730a9e39bb
-      './features/installable/index.html', // c8bd53fd2f86cdadfb2dc32edebf2438ab6aade9
+      './features/discoverable/index.html', // 2254331ce6bff4fc85d68b48511feeac1f6582ba
+      './features/installable/index.html', // 2420776f20a3bfa2fd1d2885b8188f433c1c4602
       './features/linkable/index.html', // c4912d0af1aa005229b9e1a841e831a234a9e806
       './features/network-independent/index.html', // c7e1264635f848f9a26f294104e6222f52e1eb3a
       './features/progressive/index.html', // 9765ce725f198edaedb33c56097fd21e71bf2997
@@ -79,7 +80,6 @@
       './icons/demo.svg', // a1bdd982b02620d826d543975f7f0c50ed5ef7b9
       './icons/discoverable.svg', // 7a97b0a6156516a23744ef2d2422df1472ec9765
       './icons/doc.svg', // 78cf1e74844ade439c94029b63a665bc776c75d0
-      './icons/fresh.svg', // b3bc593dede3625a0210f68999d5f6615aa56cd0
       './icons/installable.svg', // 8bda05c039fffa8204cec71e30a172d3bfeb9435
       './icons/linkable.svg', // 2c58211f28a13ee01a822aabd21671e215e06f5a
       './icons/network-independent.svg', // 90003b580855d015f30925b7c2cb6b859ae75b49
@@ -93,7 +93,7 @@
       './icons/spec.svg', // 59295e3d8de110fad0e6ffafba092ceee40f19a3
       './icons/status.svg', // 1be7d898774b8f0daeb30573ec2802c077d8d18a
       './icons/tool.svg', // 6d8df314cc039a2c6edebaef409f1d76c2ebd1ae
-      './index.html', // af3468c88653cb63cd1971ec709aac350bc12a80
+      './index.html', // 5f49e18e7bae671b82b2abd5e9f15cf0b6515c21
       './manifest.json', // d083563961744515554fba97dfa8138f2f6d8ad5
       './ms-icon-144x144.png', // ac5f36b82a2d82127d03495fbff70a6016ac6b97
       './ms-icon-150x150.png', // 02d66ca7d6531c79bbbd02182cc25e8483f08859
@@ -115,52 +115,44 @@
       var now = Date.now();
       var baseUrl = self.location;
       return this.prepareCache()
-      .then(function (cache) {
-        return Promise.all(this.RESOURCES.map(function (resource) {
-          // Bust the request to get a fresh response
-          var url = new URL(resource, baseUrl);
-          var bustParameter = (url.search ? '&' : '') + '__bust=' + now;
-          var bustedUrl = new URL(url.toString());
-          bustedUrl.search += bustParameter;
+      .then(cache => Promise.all(this.RESOURCES.map(resource => {
+        // Bust the request to get a fresh response
+        var url = new URL(resource, baseUrl);
+        var bustParameter = (url.search ? '&' : '') + '__bust=' + now;
+        var bustedUrl = new URL(url.toString());
+        bustedUrl.search += bustParameter;
 
-          // But cache the response for the original request
-          var requestConfig = { credentials: 'same-origin' };
-          var originalRequest = new Request(url.toString(), requestConfig);
-          var bustedRequest = new Request(bustedUrl.toString(), requestConfig);
-          return fetch(bustedRequest).then(function (response) {
-            if (response.ok) {
-              return cache.put(originalRequest, response);
-            }
-            console.error('Error fetching ' + url + ', status was ' + response.status);
-          });
-        }));
-      }.bind(this));
+        // But cache the response for the original request
+        var requestConfig = { credentials: 'same-origin' };
+        var originalRequest = new Request(url.toString(), requestConfig);
+        var bustedRequest = new Request(bustedUrl.toString(), requestConfig);
+        return fetch(bustedRequest)
+        .then(response => {
+          if (response.ok) {
+            return cache.put(originalRequest, response);
+          }
+          console.error('Error fetching ' + url + ', status was ' + response.status);
+        });
+      })));
     },
 
     // Remove the offline caches not controlled by this worker.
     clearOtherCaches: function () {
-      var deleteIfNotCurrent = function (cacheName) {
-        if (cacheName.indexOf(this.CACHE_PREFIX) !== 0 || cacheName === this.CACHE_NAME) {
-          return Promise.resolve();
-        }
-        return self.caches.delete(cacheName);
-      }.bind(this);
+      var outOfDate = cacheName => cacheName.startsWith(this.CACHE_PREFIX) && cacheName !== this.CACHE_NAME;
 
       return self.caches.keys()
-      .then(function (cacheNames) {
-        return Promise.all(cacheNames.map(deleteIfNotCurrent));
-      });
-
+      .then(cacheNames => Promise.all(
+        cacheNames
+        .filter(outOfDate)
+        .map(cacheName => self.caches.delete(cacheName))
+      ));
     },
 
     // Get a response from the current offline cache or from the network.
     get: function (request) {
-      var extendToIndex = this.extendToIndex.bind(this);
       return this.openCache()
-      .then(function (cache) {
-        return cache.match(extendToIndex(request));
-      })
-      .then(function (response) {
+      .then(cache => cache.match(() => this.extendToIndex(request)))
+      .then(response => {
         if (response) {
           return response;
         }
@@ -181,7 +173,8 @@
 
     // Prepare the cache for installation, deleting it before if it already exists.
     prepareCache: function () {
-      return self.caches.delete(this.CACHE_NAME).then(this.openCache.bind(this));
+      return self.caches.delete(this.CACHE_NAME)
+      .then(() => this.openCache());
     },
 
     // Open and cache the offline cache promise to improve the performance when
