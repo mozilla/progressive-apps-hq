@@ -38,7 +38,7 @@ The easiest way of contributing is by adding a resource. If your resource is abo
   * `description`: a brief description of the resource.
 
 ### Features
-[Features](https://github.com/mozilla/progressive-apps-hq/tree/gh-pages/_features) is one of the HQ collections. They are characteristics of progressive web applications with specific use cases. Currently most of them are motivated by existing native applications use cases. If you want to add a new feature, be sure you have use cases supporting it and technologies that allow it to be implement. In other words, please don't use the collection to propose new features.
+[Features](https://github.com/mozilla/progressive-apps-hq/tree/master/_features) is one of the HQ collections. They are characteristics of progressive web applications with specific use cases. Currently most of them are motivated by existing native applications use cases. If you want to add a new feature, be sure you have use cases supporting it and technologies that allow it to be implement. In other words, please don't use the collection to propose new features.
 
 The format of a feature is as follows:
   * `content`: is the long explanation for the feature.
@@ -50,7 +50,7 @@ The format of a feature is as follows:
   * `resources`: list of [resources](#resources) related with the feature.
 
 ### Technologies
-[Technologies](https://github.com/mozilla/progressive-apps-hq/tree/gh-pages/_technologies) is the other of the HQ main collections. They are the set of APIs, protocols, standards and techniques implementing features. This is not the place for ellaborated documentation, if you have published a tutorial or a blog post about a technology, it is a resource related with that technology. If you feel some technology is missed, add a new item to the collection but be sure your technology supports at least one feature.
+[Technologies](https://github.com/mozilla/progressive-apps-hq/tree/master/_technologies) is the other of the HQ main collections. They are the set of APIs, protocols, standards and techniques implementing features. This is not the place for ellaborated documentation, if you have published a tutorial or a blog post about a technology, it is a resource related with that technology. If you feel some technology is missed, add a new item to the collection but be sure your technology supports at least one feature.
 
 The metadata for technologies includes:
   * `content`: is the long explanation for the technology.
